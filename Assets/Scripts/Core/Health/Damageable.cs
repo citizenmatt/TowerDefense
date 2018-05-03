@@ -196,6 +196,8 @@ namespace Core.Health
 		/// <param name="info">HealthChangeInfo for this change</param>
 		protected void ChangeHealth(float healthIncrement, HealthChangeInfo info)
 		{
+			Debug.LogFormat("Taking damage: {0} {1}", alignment.unityObjectReference, healthIncrement);
+
 			info.oldHealth = currentHealth;
 			currentHealth += healthIncrement;
 			currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
