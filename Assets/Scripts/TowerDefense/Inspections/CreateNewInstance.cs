@@ -2,12 +2,11 @@
 
 namespace TowerDefense.Inspections
 {
-    public class CreateNewInstance
+    public class CreateNewInstance : MonoBehaviour
     {
-        public void DoSomething()
+        public void DoSomething(GameObject go)
         {
             var behaviour = new MyMonoBehaviour();
-
             var scriptableObject = new MyScriptableObject();
         }
     }
