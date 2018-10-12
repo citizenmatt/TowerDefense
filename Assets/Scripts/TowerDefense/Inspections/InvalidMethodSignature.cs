@@ -1,4 +1,5 @@
-﻿using UnityEditor.Callbacks;
+﻿using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 namespace TowerDefense.Inspections
@@ -10,13 +11,18 @@ namespace TowerDefense.Inspections
         {
         }
 
-        [DidReloadScripts]
-        public void OnDidReload()
-        {
-        }
+//        [DidReloadScripts]
+//        public void OnDidReload()
+//        {
+//        }
 
         [PostProcessBuild]
         public static void OnPostProcessScene()
+        {
+        }
+
+        [DrawGizmo(GizmoType.Active, typeof(Editor))]
+        public void DoDrawGizmo()
         {
         }
     }

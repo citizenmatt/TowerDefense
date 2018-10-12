@@ -2,7 +2,6 @@
 
 namespace TowerDefense.Inspections
 {
-    #if false
     public class NullObjects : MonoBehaviour
     {
         public void NullCoalescing(MyMonoBehaviour mb)
@@ -13,7 +12,12 @@ namespace TowerDefense.Inspections
             {
                 // ...
             }
+
+            var coolRenderer = GetComponent<Renderer>();
+            if (coolRenderer == transform)
+            {
+                
+            }
         }
     }
-    #endif
 }
