@@ -38,7 +38,7 @@ namespace TowerDefense.Inspections
             
             gameObject.SendMessage("Fire");
 
-            var hits = Physics.RaycastAll(Vector3.up, Vector3.one);
+            RaycastHit[] hits = Physics.RaycastAll(Vector3.up, Vector3.one);
             var result = Physics.OverlapBox(Vector3.zero, new Vector3(1, 1, 1), Quaternion.identity, 0,
                 QueryTriggerInteraction.Collide);
 
