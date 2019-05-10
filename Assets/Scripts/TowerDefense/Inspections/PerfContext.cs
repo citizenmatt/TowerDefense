@@ -15,8 +15,10 @@ namespace TowerDefense.Inspections
 
             IndirectCostly();
             IndirectlyCostly2();
+
+            new SomeService().DoSomethingExpensive(this);
         }
-        
+
         private void IndirectCostly()
         {
             var temp = gameObject.GetComponent<Rigidbody2D>();
@@ -26,7 +28,7 @@ namespace TowerDefense.Inspections
         {
             IndirectCostly();
         }
-        
+
         public void Start()
         {
             // Coroutines are called frequently, so don't call expensive methods from them
@@ -39,12 +41,12 @@ namespace TowerDefense.Inspections
             var x = gameObject.GetComponent<Transform>();
             yield break;
         }
-        
+
         public IEnumerator HotMethod2()
         {
             var x = GetComponent<Transform>();
             yield break;
         }
-        
+
     }
 }
