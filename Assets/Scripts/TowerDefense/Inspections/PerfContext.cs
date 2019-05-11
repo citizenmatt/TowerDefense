@@ -5,48 +5,49 @@ namespace TowerDefense.Inspections
 {
     public class CommonTest : MonoBehaviour
     {
-        private Rigidbody2D myRigidBody2D;
+        private Rigidbody2D item;
 
         // Update is called frequently, so don't directly or indirectly call expensive methods
         public void Update()
         {
-            if (myRigidBody2D == null)
-                myRigidBody2D = GetComponent<Rigidbody2D>();
+            if (item == null)
+                item = GetComponent<Rigidbody2D>();
 
-            IndirectCostly();
-            IndirectlyCostly2();
+            ResetEnemy();
+            FindTarget();
 
             new SomeService().DoSomethingExpensive(this);
         }
 
-        private void IndirectCostly()
+        private void ResetEnemy()
         {
             var temp = gameObject.GetComponent<Rigidbody2D>();
+            // ...
         }
 
-        private void IndirectlyCostly2()
+        private void FindTarget()
         {
-            IndirectCostly();
+            ResetEnemy();
+            // ...
         }
 
         public void Start()
         {
             // Coroutines are called frequently, so don't call expensive methods from them
-            StartCoroutine("HotMethod");
-            StartCoroutine(HotMethod2());
+            StartCoroutine("UpdateTargets");
+            StartCoroutine(CheckHealth());
         }
 
-        public IEnumerator HotMethod()
+        public IEnumerator UpdateTargets()
         {
             var x = gameObject.GetComponent<Transform>();
             yield break;
         }
 
-        public IEnumerator HotMethod2()
+        public IEnumerator CheckHealth()
         {
             var x = GetComponent<Transform>();
             yield break;
         }
-
     }
 }
