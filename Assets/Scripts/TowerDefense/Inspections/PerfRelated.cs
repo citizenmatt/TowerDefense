@@ -19,14 +19,14 @@ namespace TowerDefense.Inspections
             var animator = GetComponent<Animator>();
             animator.SetFloat("test", 10f, 10f, 10f);
         }
-        
+
         private void Update()
         {
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (tag == "Player" || other.tag == "Enemy")
+            if (tag == "Player" || other.tag == "GameController")
             {
                 Debug.Log("Found it!");
             }
@@ -35,7 +35,7 @@ namespace TowerDefense.Inspections
         private void LateUpdate()
         {
             var c = GetComponent("Grid");
-            
+
             gameObject.SendMessage("Fire");
 
             RaycastHit[] hits = Physics.RaycastAll(Vector3.up, Vector3.one);
