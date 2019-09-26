@@ -16,7 +16,7 @@ namespace TowerDefense.Inspections
             var coolRenderer = GetComponent<Renderer>();
             if (coolRenderer == transform)
             {
-                
+
             }
         }
     }

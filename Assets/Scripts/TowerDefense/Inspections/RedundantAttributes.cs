@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+
+using UnityEditor;
 using UnityEngine;
 
 namespace TowerDefense.Inspections
@@ -17,3 +19,5 @@ namespace TowerDefense.Inspections
         }
     }
 }
+
+#endif

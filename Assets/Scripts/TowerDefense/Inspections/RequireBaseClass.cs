@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+
+using UnityEditor;
 
 namespace TowerDefense.Inspections
 {
@@ -7,3 +9,5 @@ namespace TowerDefense.Inspections
     {
     }
 }
+
+#endif

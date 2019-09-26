@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -16,10 +17,10 @@ namespace TowerDefense.Inspections
 //        {
 //        }
 
-        [PostProcessBuild]
-        public static void OnPostProcessScene()
-        {
-        }
+//        [PostProcessBuild]
+//        public static void OnPostProcessScene()
+//        {
+//        }
 
         [DrawGizmo(GizmoType.Active, typeof(Editor))]
         public void DoDrawGizmo()
@@ -27,3 +28,5 @@ namespace TowerDefense.Inspections
         }
     }
 }
+
+#endif
