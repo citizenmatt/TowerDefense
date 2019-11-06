@@ -31,4 +31,12 @@ namespace UnityEditor.PostProcessing
         public virtual void Dispose()
         {}
     }
+
+    public static class PostProcessingMonitorExtensions
+    {
+        public static GUIContent SafeGetMonitorTitle(this PostProcessingMonitor monitor)
+        {
+            return monitor.IsSupported() ? monitor.GetMonitorTitle() : new GUIContent("Not supported");
+        }
+    }
 }
