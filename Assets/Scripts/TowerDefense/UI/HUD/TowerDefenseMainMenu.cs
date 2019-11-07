@@ -12,12 +12,12 @@ namespace TowerDefense.UI.HUD
 		/// Reference to options menu
 		/// </summary>
 		public OptionsMenu optionsMenu;
-		
+
 		/// <summary>
 		/// Reference to title menu
 		/// </summary>
 		public SimpleMainMenuPage titleMenu;
-		
+
 		/// <summary>
 		/// Reference to level select menu
 		/// </summary>
@@ -30,7 +30,7 @@ namespace TowerDefense.UI.HUD
 		{
 			ChangePage(optionsMenu);
 		}
-		
+
 		/// <summary>
 		/// Bring up the options menu
 		/// </summary>
@@ -38,7 +38,7 @@ namespace TowerDefense.UI.HUD
 		{
 			ChangePage(levelSelectMenu);
 		}
-		
+
 		/// <summary>
 		/// Returns to the title screen
 		/// </summary>
