@@ -122,8 +122,8 @@ namespace TowerDefense.Level
 			agentInstance.Initialize();
 			agentInstance.SetNode(node);
 			agentInstance.transform.rotation = node.transform.rotation;
-			
-			Debug.LogFormat("Spawning agent: {0}", agentInstance);
+
+			Debug.LogFormat("<i>Spawning agent</i>: {0}", agentInstance.name);
 		}
 
 		/// <summary>

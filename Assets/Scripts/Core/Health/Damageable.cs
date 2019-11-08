@@ -14,7 +14,7 @@ namespace Core.Health
 		/// The max health of this instance
 		/// </summary>
 		public float maxHealth;
-		
+
 		public float startingHealth;
 
 		/// <summary>
@@ -119,12 +119,12 @@ namespace Core.Health
 			var info = new HealthChangeInfo
 			{
 				damageable = this,
-				newHealth = health, 
+				newHealth = health,
 				oldHealth = currentHealth
 			};
-			
+
 			currentHealth = health;
-			
+
 			if (healthChanged != null)
 			{
 				healthChanged(info);
@@ -154,10 +154,10 @@ namespace Core.Health
 				damageAlignment = damageAlignment, damageable = this,
 				newHealth = currentHealth, oldHealth = currentHealth
 			};
-			
+
 			bool canDamage = damageAlignment == null || alignmentProvider == null ||
 			                 damageAlignment.CanHarm(alignmentProvider);
-			
+
 			if (isDead || !canDamage)
 			{
 				return false;
@@ -196,13 +196,13 @@ namespace Core.Health
 		/// <param name="info">HealthChangeInfo for this change</param>
 		protected void ChangeHealth(float healthIncrement, HealthChangeInfo info)
 		{
-			Debug.LogFormat("Taking damage: {0} {1}", alignment.unityObjectReference, healthIncrement);
+			Debug.LogFormat("<b>Taking damage</b>: {0} {1}", alignment.unityObjectReference, healthIncrement);
 
 			info.oldHealth = currentHealth;
 			currentHealth += healthIncrement;
 			currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
 			info.newHealth = currentHealth;
-			
+
 			if (healthChanged != null)
 			{
 				healthChanged(info);
