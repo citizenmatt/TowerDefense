@@ -21,7 +21,10 @@ namespace TowerDefense.Inspections
 
         private void ResetEnemy()
         {
-            var temp = gameObject.GetComponent<Rigidbody2D>();
+            if (item == null)
+                item = gameObject.GetComponent<Rigidbody2D>();
+
+            Debug.Log("Reset enemy");
             // ...
         }
 
