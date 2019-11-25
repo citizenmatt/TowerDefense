@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
 namespace TowerDefense.Inspections
 {
@@ -12,9 +14,11 @@ namespace TowerDefense.Inspections
             maxAngle = transform.eulerAngles.x;
             yAngle = transform.eulerAngles.y;
 
-            transform.position = transform.position + transform.position;
-//            transform.localPosition = Vector3.back;
-            transform.position = transform.position;
+            var x = transform.position.x;
+            var y = transform.position.y;
+            var z = transform.position.z;
+
+            transform.localPosition = new Vector3(x, y, z);
 
             var animator = GetComponent<Animator>();
             animator.SetFloat("test", 10f, 10f, 10f);
@@ -32,6 +36,13 @@ namespace TowerDefense.Inspections
             }
         }
 
+        private GameObject InstantiateAndSet(GameObject root)
+        {
+            var go = Instantiate(gameObject);
+            go.transform.parent = root.transform;
+            return go;
+        }
+
         private void LateUpdate()
         {
             var c = GetComponent("Grid");
@@ -43,12 +54,6 @@ namespace TowerDefense.Inspections
                 QueryTriggerInteraction.Collide);
 
             var mainCamera = Camera.main;
-        }
-
-        private void Test(GameObject root)
-        {
-            var go = Instantiate(gameObject);
-            go.transform.parent = root.transform;
         }
     }
 }
