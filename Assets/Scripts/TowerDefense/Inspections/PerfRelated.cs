@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 
 namespace TowerDefense.Inspections
 {
