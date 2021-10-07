@@ -27,6 +27,7 @@ namespace TowerDefense.Inspections
         {
             var mask = LayerMask.GetMask("Default", "Towers", "FlyingEnemies");
             var layer = LayerMask.NameToLayer("UnknownLayers");
+            LayerMask.NameToLayer("");
         }
 
         public void ValidationAndCompletionOfScenes()
