@@ -38,7 +38,7 @@ namespace Core.Data
 		public string musicVolumeParameter;
 
 		/// <summary>
-		/// The serialization implementation for persistence 
+		/// The serialization implementation for persistence
 		/// </summary>
 		protected JsonSaver<TDataStore> m_DataSaver;
 
@@ -67,7 +67,7 @@ namespace Core.Data
 			{
 				return;
 			}
-			
+
 			// Transform 0-1 into logarithmic -80-0
 			if (masterVolumeParameter != null)
 			{
@@ -123,7 +123,7 @@ namespace Core.Data
 
 			try
 			{
-				if (!m_DataSaver.Load(out m_DataStore))
+				if (!m_DataSaver.Load(out m_DataStore) || m_DataStore == null)
 				{
 					m_DataStore = new TDataStore();
 					SaveData();
