@@ -15,6 +15,7 @@ namespace ActionGameFramework.Projectiles
 
 		public BallisticFireMode fireMode;
 
+		// Only applicable when arcPreference is UseHigh or PreferHigh
 		[Range(-90, 90)]
 		public float firingAngle;
 
@@ -30,7 +31,7 @@ namespace ActionGameFramework.Projectiles
 		protected float m_CollisionIgnoreCount = 0;
 		protected Rigidbody m_Rigidbody;
 		protected List<Collider> m_CollidersIgnoring = new List<Collider>();
-		
+
 		/// <summary>
 		/// All the colliders attached to this gameObject and its children
 		/// </summary>
@@ -131,7 +132,7 @@ namespace ActionGameFramework.Projectiles
 			{
 				return;
 			}
-			// If we are ignoring collisions, increment counter. 
+			// If we are ignoring collisions, increment counter.
 			// If counter is complete, reenable collisions
 			if (m_IgnoringCollsions)
 			{
@@ -149,7 +150,7 @@ namespace ActionGameFramework.Projectiles
 					m_CollidersIgnoring.Clear();
 				}
 			}
-			
+
 			transform.rotation = Quaternion.LookRotation(m_Rigidbody.velocity);
 		}
 
@@ -160,7 +161,7 @@ namespace ActionGameFramework.Projectiles
 			m_Rigidbody.velocity = firingVector;
 
 			m_Fired = true;
-			
+
 			m_CollidersIgnoring.Clear();
 
 			if (fired != null)

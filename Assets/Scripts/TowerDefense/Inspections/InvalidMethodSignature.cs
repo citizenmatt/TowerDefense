@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace TowerDefense.Inspections
 {
+    // Some callbacks are identified by attributes. Rider will show a warning if the method signature is not correct,
+    // and provides Alt+Enter quick fix
+    // Note that some items are commented out because they can cause a compile error if the signature is incorrect
     public class InvalidMethodSignature : MonoBehaviour
     {
         [RuntimeInitializeOnLoadMethod]
@@ -33,11 +36,10 @@ namespace TowerDefense.Inspections
 //        {
 //        }
 
-//        [OnOpenAsset]
-//        public int DoOpenAsset()
-//        {
-//            return -1
-//        }
+        // [OnOpenAsset]
+        // public int DoOpenAsset()
+        // {
+        // }
     }
 }
 
