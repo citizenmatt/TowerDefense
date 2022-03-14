@@ -1,0 +1,29 @@
+{
+  "name": "Inspections",
+  "references": [
+    "GUID:2960060adb98348809a5f87031e76f02",
+    "GUID:e0cd26848372d4e5c891c569017e11f1"
+  ],
+  "defineConstraints": [
+    "UNITY_2017_1_OR_NEWER",
+    "UNITY_IOS || UNITY_STANDALONE",
+    "UNDEFINED_SYMBOL || HAS_RIDER_PACKAGE"
+  ],
+  "versionDefines": [
+    {
+      "define": "UNMET_VERSION_CONSTRAINT",
+      "name": "Unity",
+      "expression": "2020.9"
+    },
+    {
+      "define": "HAS_FOO_PACKAGE",
+      "name": "com.unity.foo",
+      "expression": "1.0"
+    },
+    {
+      "define": "HAS_RIDER_PACKAGE",
+      "name": "com.unity.ide.rider",
+      "expression": "1.0"
+    }
+  ]
+}
