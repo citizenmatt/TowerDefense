@@ -20,7 +20,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [
-        "UNITY_DOTS_DEBUG"
     ],
     "versionDefines": []
 }
