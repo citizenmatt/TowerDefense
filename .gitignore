@@ -28,4 +28,6 @@
 Assets/Plugins.meta
 Assets/Plugins/
 
+UserSettings/
+
 .DS_Store
