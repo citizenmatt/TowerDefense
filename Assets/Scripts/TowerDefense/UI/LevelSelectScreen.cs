@@ -68,6 +68,13 @@ namespace TowerDefense.UI
 				button.transform.SetParent(layout.transform);
 				button.transform.localScale = Vector3.one;
 				m_Buttons.Add(button.GetComponent<Button>());
+
+				if (i > 0 && GameManager.instance != null && GameManager.instance.GetStarsForLevel(m_LevelList[i - 1].id) == 0)
+				{
+					button.enabled = false;
+					button.GetComponent<Button>().interactable = false;
+					button.GetComponent<Image>().fillAmount = 10;
+				}
 			}
 			if (rightBuffer != null)
 			{
