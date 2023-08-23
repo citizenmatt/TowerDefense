@@ -30,7 +30,7 @@ namespace Core.Camera.Editor
 
 			float middleX = (m_MapSize.xMax + m_MapSize.xMin) * 0.5f;
 			float middleY = (m_MapSize.yMax + m_MapSize.yMin) * 0.5f;
-			
+
 			Vector3 bottomPosition = new Vector3(middleX, y, m_MapSize.yMin),
 			        topPosition = new Vector3(middleX, y, m_MapSize.yMax),
 			        leftPosition = new Vector3(m_MapSize.xMin, y, middleY),
@@ -39,15 +39,11 @@ namespace Core.Camera.Editor
 			// Draw handles to resize map rect
 			float size = HandleUtility.GetHandleSize(m_CameraRig.transform.position) * 0.125f;
 			Vector3 snap = Vector3.one * 0.5f;
-			Vector3 bottom = Handles.FreeMoveHandle(bottomPosition, Quaternion.LookRotation(Vector3.up), size, snap,
-			                                        Handles.RectangleHandleCap);
-			Vector3 top = Handles.FreeMoveHandle(topPosition, Quaternion.LookRotation(Vector3.up), size, snap,
-			                                     Handles.RectangleHandleCap);
-			Vector3 left = Handles.FreeMoveHandle(leftPosition, Quaternion.LookRotation(Vector3.up), size, snap,
-			                                      Handles.RectangleHandleCap);
-			Vector3 right = Handles.FreeMoveHandle(rightPosition, Quaternion.LookRotation(Vector3.up), size, snap,
-			                                       Handles.RectangleHandleCap);
-			
+			Vector3 bottom = Handles.FreeMoveHandle(bottomPosition, size, snap, Handles.RectangleHandleCap);
+			Vector3 top = Handles.FreeMoveHandle(topPosition, size, snap, Handles.RectangleHandleCap);
+			Vector3 left = Handles.FreeMoveHandle(leftPosition, size, snap, Handles.RectangleHandleCap);
+			Vector3 right = Handles.FreeMoveHandle(rightPosition, size, snap, Handles.RectangleHandleCap);
+
 			ReprojectOntoFloor(ref bottom, floor);
 			ReprojectOntoFloor(ref top, floor);
 			ReprojectOntoFloor(ref left, floor);
