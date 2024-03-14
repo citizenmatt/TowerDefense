@@ -138,11 +138,20 @@ namespace Core.Data
 		}
 
 		/// <summary>
-		/// Saves the gamme
+		/// Saves the game
 		/// </summary>
 		protected virtual void SaveData()
 		{
 			m_DataSaver.Save(m_DataStore);
+		}
+		
+		/// <summary>
+		/// Reset save game data.
+		/// </summary>
+		public void ResetData()
+		{
+			m_DataStore = new TDataStore();
+			SaveData();
 		}
 
 		/// <summary>

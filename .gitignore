@@ -30,6 +30,10 @@
 Assets/Plugins.meta
 Assets/Plugins/
 
+artifacts/
+UnityPlayer.so
 UserSettings/
+*.lighting
+*.lighting.meta
 
 .DS_Store
